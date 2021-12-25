@@ -1,0 +1,26 @@
+INT 13H
+	ah:	Lettura->02h
+		Scrittura->03h
+	al: #Settori da trattare->!=0
+	ch: #Cylinder->0 - 80
+	dh: #Head->0 - 1
+	cl: #Sector->1 - 18
+	dl: #Drive->00h: 1^floppy
+				01h: 2^floppy
+				80h: 1^hdd
+				81h: 2^hdd
+				e0h: cd/dvd
+	es:bx: Dove riversare
+	ESITI:	CF: Set on error, clear if no error
+			al: #Settori trattati
+			ah: Return code
+
+INT 10H
+	Funzione:	SetVideoMode	ah: 00h
+								al: #VideoMode
+								ESITI: al: VideoModeFlag
+				Teletype		ah: 0Eh
+								al: Character
+								bh: Page number
+								bl: Color (graphics mode)
+								ESITI: Nulla

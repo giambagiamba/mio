@@ -1,0 +1,13 @@
+start		end				size			usable
+0x0000 0000	0x0000 04FF		1.25K		N
+0X0000 0500	0X0000 7BFF		29.75K		Y
+0X0000 7C00	0X0000 7DFF		512B			N (bootloader)
+0x0000 7E00	0X0007 FFFF		480.5K		Y
+0X0008 0000	0X000F FFFF		512K			N
+
+0x0000 0500	0x0000 0518	GDT (estendibile)
+0x0000 0520	0x0000 0668	IDT (estendibile)
+0x0000 2000	0x?			"prememmap"
+0x0000 7C00	0X0000 7DFF	BOOT LOADER
+0X0000 7E00	0X0000 9200	resto del programma (estendibile)
+0x0030 0000	0x?			task list
